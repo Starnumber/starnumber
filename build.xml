@@ -4,6 +4,9 @@
 	<property name="lib" value="./WebContent/WEB-INF/lib" />
 	<property name="classes" value="./build/classes" />
 	<property name="test.class.name" value="com.starnumber.util.AllTests" />
+	<property name="tomcat.home" value="C:/apache/apache-tomcat-6.0.33" />
+
+
 	
 	<path id="test.classpath">
 	  <pathelement location="${classes}" />
@@ -56,7 +59,7 @@
 
 	</target>
 	
-	<target name="deploy" depends="tomcat-stop,clean, war">
+	<target name="deploy" depends="clean, war">
 		<delete dir="C:\apache\apache-tomcat-6.0.33\webapps\SNWebApp" />
 		<unwar src="dist/SNWebApp.war" dest="C:\apache\apache-tomcat-6.0.33\webapps\SNWebApp" />			
 	</target>
